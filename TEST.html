@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Java Scripter's Pizza Delivery</title>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<!-- Start javascript  -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        // when button is clicked, store and output these values
+      $("button").click(function(){
+        // when button is clicked, we define a price and an array of selected things
+        var price=0;
+        var favorite = [];
+        // add selections to favorite
+        $.each($("input[name='meats']:checked"), function(){
+            favorite.push($(this).val());
+            // display how many selected
+            console.log(favorite.length);
+
+            // for (i=0; i<favorite.length; i++){
+            //   console.log(favorite[i] )
+        });
+        if (favorite.length>1){
+          var increase = favorite.length-1;
+          var price = price + increase;
+          console.log(price);
+        }
+          // alert("My favourite sports are: " + favorite.join(", "));
+          // for (i=0; i<favorite.length; i++){
+            //console.log(favorite[i]);
+            // display how many selected
+            console.log(favorite.length);
+      });
+    });
+</script>
+<!-- end javascript -->
+</head>
+<body>
+    <form>
+      <div class="form-group">
+        <h3>sizes</h3>
+        <label><input type="radio" name="size" value="small">small</label>
+        <label><input type="radio" name="size" value="small">small</label>
+        <label><input type="radio" name="size" value="small">small</label>
+        <label><input type="radio" name="size" value="small">small</label>
+      </div>
+
+      <div class="form-group">
+        <h3>meats</h3>
+        <label><input type="checkbox" value="pepperoni" name="meats"> pepperoni</label>
+        <label><input type="checkbox" value="sausage" name="meats"> sausage</label>
+        <label><input type="checkbox" value="canadianbacon" name="meats"> canadianbacon</label>
+        <label><input type="checkbox" value="groundbeef" name="meats"> groundbeef</label>
+        <label><input type="checkbox" value="anchovy" name="meats"> anchovy</label>
+        <label><input type="checkbox" value="chicken" name="meats"> chicken</label>
+      </div>
+
+      <div class="form-group">
+        <h3>cheese</h3>
+        <label><input type="radio" name="cheese" value="regular">regular</label>
+        <label><input type="radio" name="cheese" value="regular">regular</label>
+        <label><input type="radio" name="cheese" value="regular">regular</label>
+      </div>
+
+      <div class="form-group">
+        <h3>crust</h3>
+        <label><input type="radio" name="crust" value="plaincrust">plaincrust</label>
+        <label><input type="radio" name="crust" value="plaincrust">plaincrust</label>
+        <label><input type="radio" name="crust" value="plaincrust">plaincrust</label>
+        <label><input type="radio" name="crust" value="plaincrust">plaincrust</label>
+        <label><input type="radio" name="crust" value="plaincrust">plaincrust</label>
+      </div>
+
+      <div class="form-group">
+          <h3>sauce</h3>
+          <label for=""><input type="radio" name="sauce" value="marinara">marinara</label>
+          <label for=""><input type="radio" name="sauce" value="marinara">marinara</label>
+          <label for=""><input type="radio" name="sauce" value="marinara">marinara</label>
+          <label for=""><input type="radio" name="sauce" value="marinara">marinara</label>
+
+      <div class="form-group">
+        <h3>veggies</h3>
+        <label for=""><input type="checkbox" name="veggies" value="tomatoes">tomatoes</label>
+        <label for=""><input type="checkbox" name="veggies" value="onions">onions</label>
+        <label for=""><input type="checkbox" name="veggies" value="olives">olives</label>
+        <label for=""><input type="checkbox" name="veggies" value="greenpeppers">greenpeppers</label>
+        <label for=""><input type="checkbox" name="veggies" value="mushrooms">mushrooms</label>
+        <label for=""><input type="checkbox" name="veggies" value="pineapple">pineapple</label>
+        <label for=""><input type="checkbox" name="veggies" value="spinach">spinach</label>
+        <label for=""><input type="checkbox" name="veggies" value="jalapeno">jalape&ntildeo</label>
+      </div>
+        <button type="button">Order</button>
+    </form>
+</body>
+</html>
